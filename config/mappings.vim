@@ -2,8 +2,6 @@
 " -----------------------------------------------------------------------------
 let mapleader=" "
 
-nmap <leader>q :NERDTreeToggle<CR>
-nmap \ <leader>q
 nmap <leader>w :TagbarToggle<CR>
 
 " Theme-based mappings
