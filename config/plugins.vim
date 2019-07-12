@@ -40,8 +40,8 @@ Plug 'fatih/vim-go'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-vinegar'
 Plug 'majutsushi/tagbar'
-Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 
 " For Denite features
