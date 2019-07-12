@@ -18,7 +18,12 @@ nmap <leader>k :ColorToggle<CR>
 nmap <leader>l :Limelight!!<CR>
 xmap <leader>l :Limelight!!<CR>
 
-nmap <leader>r :so ~/.config/nvim/init.vim<CR>
+if has('nvim')
+    let s:sourceConfig = $VIMPATH.'/init.vim'
+else
+    let s:sourceConfig = $VIMPATH.'/vimrc'
+endif 
+exec 'nmap <leader>r :so '.s:sourceConfig.'<CR>'
 nmap <leader>t :call TrimWhitespace()<CR>
 xmap <leader>a gaip*
 nmap <leader>a gaip*
@@ -32,9 +37,6 @@ nmap <leader>f :Files<CR>
 
 nmap <leader>o va{:s/\({\\|,\)\s\+/\0\r/g<CR>f<Space>s,<CR><ESC>:call TrimWhitespace()<CR>
 nmap <leader>p va(:s/\((\\|,\)\s\+/\0\r/g<CR>f<Space>s,<CR><ESC>:call TrimWhitespace()<CR>
-
-" nmap <leader>o va{:s/\v(\{|\,)\s*/\0\r/g<CR>f<Space>s,<CR><ESC>
-autocmd FileType python nmap <leader>x :0,$!~/.config/nvim/env/bin/python -m yapf<CR>
 
 nmap <silent> <leader><leader> :noh<CR>
 nmap <Tab> :bnext<CR>
