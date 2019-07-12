@@ -1,0 +1,61 @@
+# Practice Snippets
+snippet bye "My mail signature"
+Good bye, Sir. Hope to talk to you soon.
+- Arthur, King of Britain
+endsnippet
+
+snippet t
+<tab>${VISUAL: inside text/should/is/g}</tag>
+endsnippet
+
+snippet today
+Today is the `date +%d.%m.%y`.
+endsnippet
+
+snippet indent
+Indent is: `!v indent(".")`.
+endsnippet
+
+snippet wow
+${1:Text}`!p snip.rv = upper_right(t[1])`
+endsnippet
+
+snippet "be(gin)?( (\S+))?" "begin{} / end{}" br
+\begin{${1:`!p
+snip.rv = match.group(3) if match.group(2) is not None else "something"`}}
+	${2:${VISUAL}}
+\end{$1}$0
+endsnippet
+
+snippet "(\w+).par" "Parentheses (postfix)" r
+(`!p snip.rv = match.group(1)`$1)$0
+endsnippet
+
+global !p
+def upper_right(inp):
+	return (80 - 2 * len(inp))*' ' + inp.upper()
+endglobal
+
+snippet letter 
+Dear $1,
+$0
+Yours sincerely,
+$2
+endsnippet
+
+snippet case
+case ${1:word} in
+	${2:pattern} ) $0;;
+esac
+endsnippet
+
+snippet a
+<a href="${1:http://www.${2:example.com}}">
+	$0
+</a>
+endsnippet
+
+snippet title "Titlize"
+${1:title text}
+${1/\w+\s*/\u$0/g}
+endsnippet
