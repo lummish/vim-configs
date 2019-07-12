@@ -1,0 +1,13 @@
+snippet docvar "document variable" "re.match('\s*(?:var|const)?\s*([^\s]+)', snip.buffer[snip.line+1])" ie
+// `!p snip.rv = snip.context.group(1)` $1
+endsnippet
+
+snippet doctype "document type" "re.match('(type)\s*([^\s]+)', snip.buffer[snip.line+1])" ie
+// `!p snip.rv = snip.context.group(2)` $1
+endsnippet
+
+snippet docfun "document exported function" "re.match('func (?:\([^\)]+\) )?([^\s(]+)', snip.buffer[snip.line+1])" ie
+// `!p snip.rv = snip.context.group(1)` $1
+endsnippet
+
+
