@@ -1,0 +1,94 @@
+" Runtime and Plugins
+" ----------------------------------------------------------------------------- 
+
+if &compatible
+    set nocompatible
+endif
+
+" Set main configuration directory, and where cache is stored.
+let $VIMPATH = fnamemodify(resolve(expand('<sfile>:p')), ':h:h')
+let $VARPATH = expand(($XDG_CACHE_HOME ? $XDG_CACHE_HOME : '~/.cache').'/vim')
+
+" Constants
+let s:is_sudo = $SUDO_USER !=# '' && $USER !=# $SUDO_USER
+
+" Search and use environments specifically made for Neovim.
+if isdirectory($VARPATH.'/venv/neovim2')
+	let g:python_host_prog = $VARPATH.'/venv/neovim2/bin/python'
+endif
+if isdirectory($VARPATH.'/venv/neovim3')
+	let g:python3_host_prog = $VARPATH.'/venv/neovim3/bin/python'
+endif
+
+if has('pythonx')
+	if has('python3')
+		set pyxversion=3
+	elseif has('python')
+		set pyxversion=2
+	endif
+endif
+
+function! s:source_file(path, ...) abort
+	let use_global = get(a:000, 0, ! has('vim_starting'))
+	let abspath = resolve(expand($VIMPATH.'/config/'.a:path))
+	if ! use_global
+		execute 'source' fnameescape(abspath)
+		return
+	endif
+
+	let content = map(readfile(abspath),
+		\ "substitute(v:val, '^\\W*\\zsset\\ze\\W', 'setglobal', '')")
+	let tempfile = tempname()
+	try
+		call writefile(content, tempfile)
+		execute printf('source %s', fnameescape(tempfile))
+	finally
+		if filereadable(tempfile)
+			call delete(tempfile)
+		endif
+	endtry
+endfunction
+
+" Load plugins
+call s:source_file('plugins.vim')
+
+" Some general configurations
+filetype plugin indent on
+set tabstop=4 softtabstop=4 shiftwidth=4 expandtab smarttab autoindent
+set incsearch ignorecase smartcase hlsearch
+set ruler laststatus=2 showcmd showmode
+set list listchars=trail:»,tab:»-
+set fillchars+=vert:\ 
+set wrap breakindent
+set encoding=utf-8
+set number
+set title
+
+" Load configuration modules
+call s:source_file('filetype.vim')
+call s:source_file('format.vim')
+call s:source_file('terminal.vim')
+call s:source_file('theme.vim')
+call s:source_file('mappings.vim')
+
+" Disable documentation window
+set completeopt-=preview
+
+if s:is_sudo
+	set noswapfile
+	set nobackup
+	set nowritebackup
+	set noundofile
+	if has('nvim')
+		set shada="NONE"
+	else
+		set viminfo="NONE"
+	endif
+endif
+
+" Load user custom local settings
+if filereadable(expand('$VIMPATH/config/local.vim'))
+	call s:source_file('local.vim')
+endif
+
+set secure
