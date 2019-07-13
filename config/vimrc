@@ -70,6 +70,7 @@ call s:source_file('format.vim')
 call s:source_file('terminal.vim')
 call s:source_file('theme.vim')
 call s:source_file('mappings.vim')
+call s:source_file('plugins/all.vim')
 
 " Disable documentation window
 set completeopt-=preview

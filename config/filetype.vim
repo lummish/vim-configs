@@ -1,5 +1,5 @@
 " Filetype-Specific Configurations
-" ----------------------------------------------------------------------------- 
+" -----------------------------------------------------------------------------
 
 " HTML, XML, Jinja
 autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
@@ -16,7 +16,6 @@ autocmd FileType journal setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 " JS and Typescript
 autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 expandtab
-autocmd FileType typescript setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 " Golang
 au FileType go set noexpandtab
@@ -25,7 +24,7 @@ au FileType go set softtabstop=4
 au FileType go set tabstop=4
 
 " Internal Plugin Setting {{{
-" ----------------------------------------------------------------------------- 
+" -----------------------------------------------------------------------------
 
 " Markdown {{{
 let g:vim_markdown_conceal = 0
