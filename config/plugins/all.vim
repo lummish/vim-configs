@@ -1,5 +1,5 @@
 """ Plugin Configurations
-" ----------------------------------------------------------------------------- 
+" -----------------------------------------------------------------------------
 
 " AutoPairs
 let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', '`':'`' }
@@ -13,6 +13,9 @@ let g:airline_section_warning = ''
 " }}}
 " Deoplete {{{
 let g:deoplete#enable_at_startup = 1
+
+" Add custom deoplete sources for different file types
+call deoplete#custom#source('ale', 'rank', 999)
 
 " Supertab {{{
 let g:SuperTabDefaultCompletionType = "<C-n>"
@@ -64,6 +67,20 @@ let g:fzf_colors =
 " ale {{{
 let g:ale_sign_error = '⤫'
 let g:ale_sign_warning = '⚠'
+
+" Define fixers
+let g:ale_fixers = {
+    \'*': ['remove_trailing_lines', 'trim_whitespace'],
+    \'javascript': ['eslint'],
+    \'typescript': ['eslint'],
+\}
+
+" Fix files on save
+let g:ale_fix_on_save = 1
+
+" Disable linting except on save
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_insert_leave = 0
 
 " }}}
 " airline {{{
