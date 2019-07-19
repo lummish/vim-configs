@@ -32,8 +32,6 @@ nmap <leader>d <Plug>(pydocstring)
 nmap <leader>f :Files<CR>
 
 nmap <silent> <leader><leader> :noh<CR>
-nmap <Tab> :bnext<CR>
-nmap <S-Tab> :bprevious<CR>
 
 " coc.nvim mappings {{{
 
@@ -104,7 +102,7 @@ nmap <leader>qf  <Plug>(coc-fix-current)
 " Use <tab> for select selections ranges, needs server support, like: coc-tsserver, coc-python
 nmap <silent> <TAB> <Plug>(coc-range-select)
 xmap <silent> <TAB> <Plug>(coc-range-select)
-xmap <silent> <S-TAB> <Plug>(coc-range-select-backword)
+xmap <silent> <S-TAB> <Plug>(coc-range-select-backward)
 
 " Using CocList
 " Show all diagnostics
