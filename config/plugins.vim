@@ -45,9 +45,6 @@ Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdcommenter'
 
 " For Denite features
-Plug 'Shougo/denite.nvim'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'zchee/deoplete-jedi'
 Plug 'ervandew/supertab'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/vim-easy-align'
@@ -61,7 +58,6 @@ Plug 'chrisbra/Colorizer'
 Plug 'vim-scripts/loremipsum'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'metakirby5/codi.vim'
 
 " JS Object Utilities
 Plug 'tpope/vim-jdaddy'
@@ -72,8 +68,6 @@ Plug 'HerringtonDarkholme/yats.vim'
 " Yaml syntax
 Plug 'stephpy/vim-yaml'
 
-Plug 'zchee/deoplete-go', { 'do': 'make'} " Go auto completion
-
 " Linting
 Plug 'w0rp/ale'
 
@@ -81,6 +75,8 @@ Plug 'w0rp/ale'
 if has('nvim')
     " Typescript tooling
     Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
+    " Completion and language server integration
+    Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': { -> coc#util#install() }}
 else
     Plug 'Quramy/tsuquyomi'
 endif
