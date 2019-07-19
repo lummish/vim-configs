@@ -40,6 +40,7 @@ let g:tagbar_iconchars = ['↠', '↡']
 " }}}
 " fzf-vim
 let g:fzf_action = {
+  \ 'ctrl-p': { lines -> append(line('.'), lines) },
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-s': 'split',
   \ 'ctrl-v': 'vsplit' }
