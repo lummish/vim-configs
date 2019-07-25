@@ -71,12 +71,10 @@ let g:ale_fixers = {
     \'typescript': ['eslint'],
 \}
 
-" Fix files on save
-let g:ale_fix_on_save = 1
-
 " Disable linting except on save
 let g:ale_lint_on_text_changed = 'never'
-let g:ale_lint_on_insert_leave = 0
+let g:ale_lint_on_enter = 1
+let g:ale_lint_on_save = 1
 
 " }}}
 " airline {{{

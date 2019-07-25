@@ -13,3 +13,6 @@ augroup ft_typescript
     command! -buffer Hover ALEHover
     command! -buffer SymbolSearch ALESymbolSearch
 augroup END
+
+let b:ale_linters = ['eslint']
+let b:ale_linters_ignore = ['tslint']
