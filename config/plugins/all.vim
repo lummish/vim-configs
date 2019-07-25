@@ -11,7 +11,10 @@ let g:airline_section_warning = ''
 "let g:airline#extensions#tabline#enabled = 1
 
 " }}}
+" vim-markdown
+let g:markdown_fenced_languages = ['css', 'javascript', 'js=javascript', 'typescript']
 
+" }}}
 " Supertab {{{
 let g:SuperTabDefaultCompletionType = "<C-n>"
 

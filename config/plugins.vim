@@ -26,6 +26,7 @@ Plug 'junegunn/vim-journal'
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'nightsense/forgotten'
 Plug 'zaki/zazen'
+Plug 'tpope/vim-markdown'
 
 " Aesthetics - Additional
 Plug 'nightsense/nemo'

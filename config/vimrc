@@ -79,9 +79,6 @@ call s:source_file('theme.vim')
 call s:source_file('mappings.vim')
 call s:source_file('plugins/all.vim')
 
-" Disable documentation window
-set completeopt-=preview
-
 if s:is_sudo
 	set noswapfile
 	set nobackup
