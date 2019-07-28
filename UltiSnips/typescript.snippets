@@ -1,5 +1,16 @@
-# Jest Snippets
+# Disable an eslint rule for the next line
+snippet eslintdl "eslint-disable-line"
+// eslint-disable-line $0
+endsnippet
 
+# Create an interface
+snippet iface "interface"
+interface ${VISUAL}${1:Name} {
+	${VISUAL}${2:property}: ${VISUAL}${3:type};$0
+}
+endsnippet
+
+# Jest Snippets
 snippet it "it block (jest)" b
 it('${1:description}', () => {
 	$0
@@ -16,3 +27,4 @@ endsnippet
 snippet tslint:disable-line "disable line (tslint)"
 // tslint:disable-line
 endsnippet
+
