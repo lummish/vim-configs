@@ -60,7 +60,3 @@ let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
 let g:tsuquyomi_baseurl_import_path = 1
 
 " }}}
-" Javascript {{{
-autocmd FileType js UltiSnipsAddFiletypes javascript-jasmine
-
-" }}}

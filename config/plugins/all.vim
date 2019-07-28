@@ -19,13 +19,6 @@ let g:markdown_fenced_languages = ['css', 'javascript', 'js=javascript', 'typesc
 let g:SuperTabDefaultCompletionType = "<C-n>"
 
 " }}}
-" Ultisnips {{{
-let g:UltiSnipsExpandTrigger="<C-j>"
-let g:UltiSnipsJumpForwardTrigger="<C-j>"
-let g:UltiSnipsJumpBackwardTrigger="<C-k>"
-let g:UltiSnipsSnippetDirectories=[$VIMPATH."/UltiSnips", "UltiSnips"]
-
-" }}}
 " EasyAlign {{{
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)

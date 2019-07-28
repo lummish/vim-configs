@@ -57,7 +57,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'chrisbra/Colorizer'
 Plug 'vim-scripts/loremipsum'
-Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 " JS Object Utilities
