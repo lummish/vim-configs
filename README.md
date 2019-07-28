@@ -62,6 +62,7 @@ cd ~/.config/nvim
 | `<leader>w` | Normal | Toggle tagbar |
 | `<leader>s` | Normal | Open a terminal in a horizontal split |
 | `<leader>vs` | Normal | Open a terminal in a vertical split |
+| `<leader>bt` | Normal | Open a terminal as a bottom split the entire width of the screen |
 | `<leader>d` | Normal | Display pydocstring |
 | `<leader>f` | Normal | Fuzzy find over files in working directory |
 | `<leader><leader>` | Normal | Turn off highlighting |

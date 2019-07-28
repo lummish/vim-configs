@@ -27,6 +27,7 @@ nmap <leader>t :call TrimWhitespace()<CR>
 " Terminal-related mappings
 nmap <leader>s <C-w>s<C-w>j:terminal<CR>
 nmap <leader>vs <C-w>v<C-w>l:terminal<CR>
+nmap <silent> <leader>bt :botright 20split \| terminal<CR>
 
 nmap <leader>d <Plug>(pydocstring)
 nmap <leader>f :Files<CR>
