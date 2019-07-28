@@ -3,8 +3,9 @@
 
 if has('nvim')
     " Neovim :Terminal
-    tmap <Esc> <C-\><C-n>
-    tmap <C-w> <Esc><C-w>
+    tnoremap <leader><Esc> <Esc>
+    tnoremap <Esc> <C-\><C-n>
+    tnoremap <C-w> <C-\><C-n><C-w>
     "tmap <C-d> <Esc>:q<CR>
     autocmd BufWinEnter,WinEnter term://* startinsert
     autocmd BufLeave term://* stopinsert

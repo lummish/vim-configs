@@ -66,6 +66,9 @@ cd ~/.config/nvim
 | `<leader>d` | Normal | Display pydocstring |
 | `<leader>f` | Normal | Fuzzy find over files in working directory |
 | `<leader><leader>` | Normal | Turn off highlighting |
+| `<leader><Esc>` | Terminal | Escape within terminal buffer (e.g. enter normal mode of nested nvim) |
+| `<Esc>` | Terminal | Switch to normal mode on terminal buffer |
+| `Ctrl`+`w` | Terminal | Ready window change action |
 
 ### Plugin: coc.nvim
 
